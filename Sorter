@@ -1,0 +1,26 @@
+class School:
+    def __init__(self, name, surname):
+        self.name: str = name
+        self.surname: str = surname
+    def show(self):
+        return "{} {}".format(self.name.upper(), self.surname.upper())
+        
+class Student(School):
+    def __init__(self, name, surname, grade):
+        super().__init__(name, surname)
+        self.grade: int = grade
+        print("student inited")
+        
+    def show(self):
+        info = super().show()
+        return info + " {}".format(self.grade)
+
+class Teacher(School):
+    def __init__(self, name, surname, prof_orientation):
+        super().__init__(name, surname)
+        self.prof_orientation: str = prof_orientation
+        print("teacher inited")
+        
+    def show(self):
+        info = super().show()
+        return info + " {}".format(self.prof_orientation)
